@@ -1,0 +1,30 @@
+public class Target {
+
+    public static void main(String[] args) {
+        
+        Integer anterior = 0;
+        Integer atual = 1;
+        Integer aux = 0;
+        Integer num = 10;
+
+        for (int i = 0; i < 10; i++) {
+            aux = anterior;
+            anterior = atual;
+            atual += aux;
+            
+            if (atual == num) {
+
+                System.out.println("O numero " + num + " existe na sequencia Fibonacci.");
+
+            }else{
+
+                System.out.println("O numero " + num + " não existe na sequencia Fibonacci.");
+
+                break;
+            }
+
+        }
+
+    }
+
+}
