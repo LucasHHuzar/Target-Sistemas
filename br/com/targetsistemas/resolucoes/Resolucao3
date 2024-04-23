@@ -1,0 +1,100 @@
+
+public class Target {
+
+    public static void main(String[] args) {
+
+        int a = 1;
+        int b = 2;
+        int c = 0;
+        int d = 0;
+        int e = 1;
+        int[] f = {2, 10, 12, 16, 17, 18, 19, 200};
+        
+        System.out.println("Resolução letra A: ");
+        for (int i = 0; i < 5; i++) {
+            System.out.print(a + " ");
+            a = a + 2;
+        }
+
+        espaco();
+
+        System.out.println("Resolução letra B: ");
+        for (int i = 0; i < 7; i++) {
+            System.out.print(b + " ");
+            b += b;
+        }
+
+        espaco();
+        
+        System.out.println("Resolução letra C: ");
+        for (int i = 0; i < 18; i++) {
+
+            if(i % 2 != 0) {
+
+                System.out.print(c + " ");
+
+                c = i + c;
+            }
+
+        }
+
+        espaco();
+
+        System.out.println("Resolução letra D: ");
+        for (int i = 1; i < 11; i++) {
+            
+            if(i % 2 == 0) {
+
+                d = i * i;
+                
+                System.out.print(d + " ");
+
+            }
+
+        }
+
+        espaco();
+        
+        System.out.println("Resolução letra E: ");
+        letraE(e);
+
+        espaco();
+
+        System.out.println("Resolução letra F: ");
+        letraF(f);
+        
+    }
+    
+    public static void letraE(int e){
+        
+        int anterior = 0;
+        int aux = 0;
+        
+        for (int i = 0; i < 9; i++) {
+    
+            anterior = e;
+            e = aux;
+            aux = anterior + e;
+    
+            System.out.print(e + " ");
+        }
+    
+    }
+
+    public static void letraF(int[] f){
+
+        System.out.println("Os números que começam com D são: ");
+
+        for (int elementos : f) {
+
+            System.out.print(elementos + " ");
+
+        }
+
+    }
+
+    public static void espaco(){
+        System.out.println("\n");
+    }
+
+}
