@@ -1,30 +1,51 @@
+import java.util.Scanner;
+
 public class Target {
 
     public static void main(String[] args) {
-        
-        Integer anterior = 0;
-        Integer atual = 1;
-        Integer aux = 0;
-        Integer num = 10;
 
-        for (int i = 0; i < 10; i++) {
-            aux = anterior;
-            anterior = atual;
-            atual += aux;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite um número para ver se pertence a sequência Fibonacci");
+        Integer num = scanner.nextInt();
+
+        if (Verificador(num)) { 
+
+            System.out.println("O número " + num + " pertence a Fibonacci");
+
+        } else {
+
+            System.out.println("O número " + num + " não existe na sequancia Fibonacci");
             
-            if (atual == num) {
-
-                System.out.println("O numero " + num + " existe na sequencia Fibonacci.");
-
-            }else{
-
-                System.out.println("O numero " + num + " não existe na sequencia Fibonacci.");
-
-                break;
-            }
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean Verificador(int num){
+        if (num == 0 || num == 1) {
+            return true;
 
         }
 
+        int anterior = 0;
+        int atual = 1;
+        int aux = anterior + atual;
+
+        while (aux <= num) {
+
+            if (aux == num) {
+                return true;
+            }
+
+            anterior = atual;
+            atual = aux;
+            aux = anterior + atual;
+            
+        }
+
+        return false;
+        
     }
 
 }
